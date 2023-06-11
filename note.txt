@@ -1,0 +1,2 @@
+visulisasi banyaknya gender secara pie
+top 10 gender bar count

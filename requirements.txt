@@ -1,0 +1,6 @@
+matplotlib==3.7.1
+pandas==1.5.3
+plotly==5.13.1
+pyspark.egg==info
+streamlit==1.23.1
+wordcloud==1.9.2

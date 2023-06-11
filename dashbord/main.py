@@ -4,6 +4,7 @@ import streamlit as st
 import plotly.graph_objects as go    
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+
 def create_visual_pie(value,label,title):
     fig = go.Figure(data=[go.Pie(labels=label,values=value)])
     fig.update_layout(title=title)
@@ -14,7 +15,9 @@ def create_visual_bar(value,label,title):
     fig.update_layout(title=title)
     return fig
 
-def generate_wordcloud(text,background_color:str='white'):
+def generate_wordcloud(text,background_color:str='white',title=None):
+    if title==None:
+        st.title("gak tahu")
     st.set_option('deprecation.showPyplotGlobalUse', False)
     wordcloud=WordCloud(background_color=background_color).generate(str(text.values))
     plt.imshow(wordcloud)
@@ -42,4 +45,4 @@ def main():
     text_tag=tag[tag['genre1']== pilih_genre]['tag']
     
     if st.button("Buat Wordcloud"):
-        generate_wordcloud(text_tag)   
+        generate_wordcloud(text_tag,title=pilih_genre)   
